@@ -22,7 +22,7 @@ export async function AboutSection() {
   }
 
   return (
-    <section id="about" className="py-20 px-6">
+    <section id="about" className="sm:py-8 sm:px-6 md:py-12 md:px-8 lg:py-16 lg:px-0">
       <div className="container mx-auto max-w-4xl">
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">About Me</h2>

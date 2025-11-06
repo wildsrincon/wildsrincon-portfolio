@@ -1,23 +1,26 @@
 import {
   AboutSection,
+  ExperienceSection,
   HeroSection,
+  TestimonialsSection,
 } from "@/components/sections";
+import { SkillsSection } from "./sections/SkillsSection";
 
 const PortfolioContent = async () => {
   return (
     <>
       <HeroSection />
       <AboutSection />
-      {/* <TestimonialsSection />
+      <TestimonialsSection />
       <SkillsSection />
       <ExperienceSection />
-      <EducationSection />
-      <ProjectsSection />
-      <CertificationsSection />
-      <AchievementsSection />
-      <ServicesSection />
-      <BlogSection />
-      <ContactSection /> */}
+      {/* <EducationSection /> */}
+      {/* <ProjectsSection /> */}
+      {/* <CertificationsSection /> */}
+      {/* <AchievementsSection /> */}
+      {/* <ServicesSection /> */}
+      {/* <BlogSection /> */}
+      {/* <ContactSection /> */}
     </>
   )
 }
