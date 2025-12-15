@@ -15,6 +15,16 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  // Disable React DevTools in production
+  webpack: (config, { dev, isServer }) => {
+    if (!dev && !isServer) {
+      config.resolve.alias = {
+        ...config.resolve.alias,
+        "react-dom/client": "react-dom/client",
+      };
+    }
+    return config;
+  },
 };
 
 export default nextConfig;
