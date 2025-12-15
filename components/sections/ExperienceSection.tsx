@@ -3,6 +3,7 @@ import Image from "next/image";
 import { defineQuery } from "next-sanity";
 import { urlFor } from "@/sanity/lib/image";
 import { sanityFetch } from "@/sanity/lib/live";
+import type { Experience } from "@/sanity.types";
 
 const EXPERIENCE_QUERY =
   defineQuery(`*[_type == "experience"] | order(startDate desc){
@@ -48,7 +49,7 @@ export async function ExperienceSection() {
         </div>
 
         <div className="space-y-8">
-          {experiences.map((exp) => (
+          {experiences.map((exp: Experience) => (
             <div
               key={`${exp.company}-${exp.position}-${exp.startDate}`}
               className="relative pl-8 pb-8 border-l-2 border-muted last:border-l-0"
@@ -117,7 +118,7 @@ export async function ExperienceSection() {
                       Key Responsibilities:
                     </h4>
                     <ul className="list-disc list-inside space-y-1 text-muted-foreground text-xs @md/card:text-sm">
-                      {exp.responsibilities.map((resp, idx) => (
+                      {exp.responsibilities.map((resp: string, idx: number) => (
                         <li key={`${exp.company}-resp-${idx}`}>{resp}</li>
                       ))}
                     </ul>
@@ -130,18 +131,20 @@ export async function ExperienceSection() {
                       Achievements:
                     </h4>
                     <ul className="list-disc list-inside space-y-1 text-muted-foreground text-xs @md/card:text-sm">
-                      {exp.achievements.map((achievement, idx) => (
-                        <li key={`${exp.company}-achievement-${idx}`}>
-                          {achievement}
-                        </li>
-                      ))}
+                      {exp.achievements.map(
+                        (achievement: string, idx: number) => (
+                          <li key={`${exp.company}-achievement-${idx}`}>
+                            {achievement}
+                          </li>
+                        ),
+                      )}
                     </ul>
                   </div>
                 )}
 
                 {exp.technologies && exp.technologies.length > 0 && (
                   <div className="flex flex-wrap gap-1.5 @md/card:gap-2 mt-4">
-                    {exp.technologies.map((tech, techIdx) => {
+                    {exp.technologies.map((tech: any, techIdx: number) => {
                       const techData =
                         tech && typeof tech === "object" && "name" in tech
                           ? tech

@@ -1,3 +1,1 @@
-function sum(a, b) {
-  
-}
+function sum(a: number, b: number) {}

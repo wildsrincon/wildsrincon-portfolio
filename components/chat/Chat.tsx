@@ -1,15 +1,11 @@
 "use client";
 import { createSession } from "@/actions/create-session";
-import type { CHAT_PROFILE_QUERYResult } from "@/sanity.types";
+import type { Profile } from "@/sanity.types";
 import { ChatKit, useChatKit } from "@openai/chatkit-react";
 import { useEffect } from "react";
 import { useSidebar } from "../ui/sidebar";
 
-export function Chat({
-  profile,
-}: {
-  profile: CHAT_PROFILE_QUERYResult | null;
-}) {
+export function Chat({ profile }: { profile: Profile | null }) {
   const { toggleSidebar } = useSidebar();
 
   // Bloquear Mixpanel en desarrollo

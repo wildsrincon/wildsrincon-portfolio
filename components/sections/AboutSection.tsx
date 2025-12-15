@@ -100,19 +100,24 @@ export async function AboutSection() {
         {profile.stats && profile.stats.length > 0 && (
           <div className="@container mt-12 pt-12 border-t">
             <div className="grid grid-cols-2 @lg:grid-cols-4 gap-6">
-              {profile.stats.map((stat, idx) => (
-                <div
-                  key={`${stat.label}-${idx}`}
-                  className="@container/stat text-center"
-                >
-                  <div className="text-3xl @md/stat:text-4xl font-bold text-primary mb-2">
-                    {stat.value}
+              {profile.stats.map(
+                (
+                  stat: { label?: string; value?: string; _key: string },
+                  idx: number,
+                ) => (
+                  <div
+                    key={`${stat.label}-${idx}`}
+                    className="@container/stat text-center"
+                  >
+                    <div className="text-3xl @md/stat:text-4xl font-bold text-primary mb-2">
+                      {stat.value}
+                    </div>
+                    <div className="text-xs @md/stat:text-sm text-muted-foreground">
+                      {stat.label}
+                    </div>
                   </div>
-                  <div className="text-xs @md/stat:text-sm text-muted-foreground">
-                    {stat.label}
-                  </div>
-                </div>
-              ))}
+                ),
+              )}
             </div>
           </div>
         )}
