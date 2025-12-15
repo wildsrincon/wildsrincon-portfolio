@@ -1,28 +1,34 @@
 import {
   AboutSection,
+  BlogSection,
+  CertificationsSection,
+  ContactSection,
+  EducationSection,
   ExperienceSection,
   HeroSection,
+  ProjectsSection,
+  ServicesSection,
+  SkillsSection,
   TestimonialsSection,
 } from "@/components/sections";
-import { SkillsSection } from "./sections/SkillsSection";
 
 const PortfolioContent = async () => {
   return (
     <>
       <HeroSection />
       <AboutSection />
+      <ServicesSection />
       <TestimonialsSection />
       <SkillsSection />
       <ExperienceSection />
-      {/* <EducationSection /> */}
-      {/* <ProjectsSection /> */}
-      {/* <CertificationsSection /> */}
+      <EducationSection />
+      <ProjectsSection />
+      <CertificationsSection />
       {/* <AchievementsSection /> */}
-      {/* <ServicesSection /> */}
-      {/* <BlogSection /> */}
-      {/* <ContactSection /> */}
+      <BlogSection />
+      <ContactSection />
     </>
-  )
-}
+  );
+};
 
-export default PortfolioContent
+export default PortfolioContent;

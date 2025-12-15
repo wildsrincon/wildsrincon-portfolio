@@ -20,7 +20,7 @@ export const LayoutTextFlip = ({
       duration,
       wordsLength: words.length,
     }),
-    [duration, words.length]
+    [duration, words.length],
   );
 
   useEffect(() => {
@@ -28,7 +28,9 @@ export const LayoutTextFlip = ({
     setCurrentIndex((prev) => (prev >= intervalConfig.wordsLength ? 0 : prev));
 
     const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % intervalConfig.wordsLength);
+      setCurrentIndex(
+        (prevIndex) => (prevIndex + 1) % intervalConfig.wordsLength,
+      );
     }, intervalConfig.duration);
 
     return () => clearInterval(interval);

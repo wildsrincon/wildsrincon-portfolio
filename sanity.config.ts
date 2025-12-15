@@ -1,33 +1,33 @@
-'use client'
+"use client";
 
 /**
  * This configuration is used to for the Sanity Studio that’s mounted on the `/app/studio/[[...tool]]/page.tsx` route
  */
 
-import {visionTool} from '@sanity/vision'
-import {defineConfig} from 'sanity'
-import {structureTool} from 'sanity/structure'
+import { visionTool } from "@sanity/vision";
+import { defineConfig } from "sanity";
+import { structureTool } from "sanity/structure";
 
 // Go to https://www.sanity.io/docs/api-versioning to learn how API versioning works
-import {apiVersion, dataset, projectId} from './sanity/env'
-import {schema} from './sanity/schemaTypes'
-import {structure} from './sanity/structure'
-import { RocketIcon } from '@sanity/icons'
+import { apiVersion, dataset, projectId } from "./sanity/env";
+import { schema } from "./sanity/schemaTypes";
+import { structure } from "./sanity/structure";
+import { RocketIcon } from "@sanity/icons";
 
 export default defineConfig({
-  basePath: '/studio',
+  basePath: "/studio",
   projectId,
   dataset,
   // Add and edit the content schema in the './sanity/schemaTypes' folder
   schema,
-  title: 'WildSrincon Portfolio Studio',
-  subtitle: 'CMS Portfolio',
+  title: "WildSrincon Portfolio Studio",
+  subtitle: "CMS Portfolio",
   // Custom Icon
   icon: RocketIcon,
   plugins: [
-    structureTool({structure, title: 'Content'}),
+    structureTool({ structure, title: "Content" }),
     // Vision is for querying with GROQ from inside the Studio
     // https://www.sanity.io/docs/the-vision-plugin
-    visionTool({defaultApiVersion: apiVersion, title: "GROQ Vision"}),
+    visionTool({ defaultApiVersion: apiVersion, title: "GROQ Vision" }),
   ],
-})
+});

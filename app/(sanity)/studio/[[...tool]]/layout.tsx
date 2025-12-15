@@ -1,23 +1,21 @@
-import type { Metadata } from 'next'
-import type { ReactNode } from 'react'
+import type { Metadata } from "next";
+import type { ReactNode } from "react";
 
 type LayoutProps = {
-  children: ReactNode
-}
+  children: ReactNode;
+};
 
 export const metadata: Metadata = {
-  title: 'Sanity Studio',
-  description: 'Manage content with Sanity Studio',
-}
+  title: "Sanity Studio",
+  description: "Manage content with Sanity Studio",
+};
 
 function Layout({ children }: LayoutProps) {
   return (
     <html lang="en">
-      <body>
-        {children}
-      </body>
+      <body>{children}</body>
     </html>
-  )
+  );
 }
 
-export default Layout
+export default Layout;

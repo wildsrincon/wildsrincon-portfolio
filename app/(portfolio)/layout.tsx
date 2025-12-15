@@ -1,16 +1,19 @@
 import { AppSidebar } from "@/components/app-sidebar";
+import { ModeToggle } from "@/components/DarkModeToggle";
+import { FloatingDock } from "@/components/FloatingDock";
+import SidebarToggle from "@/components/SidebarToggle";
+import { ThemeProvider } from "@/components/ThemeProvider";
 import { SidebarInset, SidebarProvider } from "@/components/ui/sidebar";
 import { SanityLive } from "@/sanity/lib/live";
 import { ClerkProvider } from "@clerk/nextjs";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import "../globals.css";
-import SidebarToggle from "@/components/SidebarToggle";
 import Script from "next/script";
+import "../globals.css";
 
 type RootLayoutProps = {
   children: React.ReactNode;
-}
+};
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,27 +30,38 @@ export const metadata: Metadata = {
   description: "My personal portfolio built with Next.js and Sanity.io",
 };
 
-export default function RootLayout({
-  children,
-}: RootLayoutProps) {
+export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <ClerkProvider>
-      <html lang="en">
+      <html lang="en" suppressHydrationWarning>
         <body
           className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         >
-          <Script 
-            src="https://cdn.platform.openai.com/deployments/chatkit/chatkit.js"
-            strategy="afterInteractive"
-          />
-          <SidebarProvider>
-            <SidebarInset>
-              {children}
-            </SidebarInset>
-            <AppSidebar side="right" />
-            <SidebarToggle />
-          </SidebarProvider>
-          <SanityLive />
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+
+            <Script
+              src="https://cdn.platform.openai.com/deployments/chatkit/chatkit.js"
+              strategy="afterInteractive"
+            />
+            <SidebarProvider defaultOpen={false}>
+              <SidebarInset>{children}</SidebarInset>
+              <AppSidebar side="right" />
+              <FloatingDock />
+              <SidebarToggle />
+              {/* Mode Toggle - Desktop: bottom right next to AI chat, Mobile: top right next to burger menu */}
+              <div className="fixed md:bottom-6 md:right-24 top-4 right-18 md:top-auto md:left-auto z-20">
+                <div className="w-10 h-10 md:w-12 md:h-12">
+                  <ModeToggle />
+                </div>
+              </div>
+            </SidebarProvider>
+            <SanityLive />
+          </ThemeProvider>
         </body>
       </html>
     </ClerkProvider>

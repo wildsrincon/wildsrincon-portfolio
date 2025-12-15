@@ -48,8 +48,8 @@ export async function HeroSection() {
                 <span className="text-primary">{profile.lastName}</span>
               </h1>
               {profile.headlineStaticText &&
-                profile.headlineAnimatedWords &&
-                profile.headlineAnimatedWords.length > 0 ? (
+              profile.headlineAnimatedWords &&
+              profile.headlineAnimatedWords.length > 0 ? (
                 <div className="text-xl @md/hero:text-2xl @lg/hero:text-3xl text-muted-foreground font-medium gap-2">
                   <LayoutTextFlip
                     text={profile.headlineStaticText}

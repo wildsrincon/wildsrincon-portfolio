@@ -17,14 +17,14 @@ export function Chat({
     if (process.env.NODE_ENV === "development") {
       // Mock de Mixpanel para evitar CORS
       (window as any).mixpanel = {
-        init: () => { },
-        track: () => { },
-        identify: () => { },
-        register: () => { },
+        init: () => {},
+        track: () => {},
+        identify: () => {},
+        register: () => {},
         people: {
-          set: () => { },
-          set_once: () => { },
-          increment: () => { },
+          set: () => {},
+          set_once: () => {},
+          increment: () => {},
         },
       };
     }
