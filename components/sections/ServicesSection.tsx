@@ -1,7 +1,8 @@
 import { PortableText } from "@portabletext/react";
-import { IconCheck } from "@tabler/icons-react";
-import { Star } from "lucide-react";
+import { IconCheck, IconStar } from "@tabler/icons-react";
+import { ChevronRight } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import { defineQuery } from "next-sanity";
 import { urlFor } from "@/sanity/lib/image";
 import { sanityFetch } from "@/sanity/lib/live";
@@ -9,6 +10,7 @@ import type { Service } from "@/sanity.types";
 
 const SERVICES_QUERY =
   defineQuery(`*[_type == "service"] | order(order asc, _createdAt desc){
+  _id,
   title,
   slug,
   icon,
@@ -81,14 +83,14 @@ export async function ServicesSection() {
         {featured.length > 0 && (
           <div className="mb-12">
             <h3 className="text-2xl font-bold mb-6 flex items-center gap-2">
-              <Star className="w-6 h-6 text-yellow-500 fill-yellow-500" />
+              <IconStar className="w-6 h-6 text-yellow-500 fill-yellow-500" />
               Featured Services
             </h3>
             <div className="@container">
               <div className="grid grid-cols-1 @3xl:grid-cols-2 gap-8">
                 {featured.map((service: Service) => (
                   <div
-                    key={service.slug?.current || service.title}
+                    key={`${service._id}-${service.slug?.current || service.title}`}
                     className="@container/card bg-card border-2 border-primary/20 rounded-lg p-6 @lg/card:p-8 hover:shadow-xl transition-all hover:scale-[1.02]"
                   >
                     {service.icon && (
@@ -141,17 +143,9 @@ export async function ServicesSection() {
                       </div>
                     )}
 
-                    <div className="grid grid-cols-1 @xs/card:grid-cols-2 gap-4 mb-6 pt-4 border-t">
-                      {service.pricing && (
-                        <div>
-                          <p className="text-xs @md/card:text-sm text-muted-foreground mb-1">
-                            Pricing
-                          </p>
-                          {formatPrice(service.pricing)}
-                        </div>
-                      )}
+                    <div className="mb-6 pt-4 border-t">
                       {service.timeline && (
-                        <div>
+                        <div className="mb-4">
                           <p className="text-xs @md/card:text-sm text-muted-foreground mb-1">
                             Timeline
                           </p>
@@ -160,6 +154,13 @@ export async function ServicesSection() {
                           </p>
                         </div>
                       )}
+                      <Link
+                        href="#contact"
+                        className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors w-full justify-center"
+                      >
+                        Get Quote
+                        <ChevronRight className="w-4 h-4" />
+                      </Link>
                     </div>
 
                     {service.technologies &&
@@ -202,7 +203,7 @@ export async function ServicesSection() {
               <div className="grid grid-cols-1 @2xl:grid-cols-2 @5xl:grid-cols-3 gap-6">
                 {regular.map((service: Service) => (
                   <div
-                    key={service.slug?.current || service.title}
+                    key={`${service._id}-${service.slug?.current || service.title}`}
                     className="@container/card bg-card border rounded-lg p-6 hover:shadow-lg transition-all hover:scale-105 flex flex-col"
                   >
                     {service.icon && (
@@ -244,17 +245,19 @@ export async function ServicesSection() {
                       </ul>
                     )}
 
-                    <div className="pt-4 border-t space-y-2">
-                      {service.pricing && (
-                        <div className="text-xs @md/card:text-sm">
-                          {formatPrice(service.pricing)}
-                        </div>
-                      )}
+                    <div className="pt-4 border-t space-y-3 mt-auto">
                       {service.timeline && (
-                        <p className="text-xs @md/card:text-sm text-muted-foreground truncate">
+                        <p className="text-xs @md/card:text-sm text-muted-foreground">
                           ⏱️ {service.timeline}
                         </p>
                       )}
+                      <Link
+                        href="#contact"
+                        className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-4 py-2 rounded-lg font-semibold hover:bg-primary/90 transition-colors text-sm @md/card:text-base w-full justify-center"
+                      >
+                        Get Quote
+                        <ChevronRight className="w-3.5 h-3.5 @md/card:w-4 @md/card:h-4" />
+                      </Link>
                     </div>
                   </div>
                 ))}

@@ -107,7 +107,7 @@ export function SkillsChart({ skills }: SkillsChartProps) {
                     tickLine={false}
                     tickMargin={8}
                     axisLine={false}
-                    width={85}
+                    width={120}
                     className="text-xs"
                   />
                   <ChartTooltip

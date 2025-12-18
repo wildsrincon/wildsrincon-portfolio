@@ -16,7 +16,10 @@ const nextConfig: NextConfig = {
     ],
   },
   // Disable React DevTools in production
-  webpack: (config, { dev, isServer }) => {
+  webpack: (
+    config: any,
+    { dev, isServer }: { dev: boolean; isServer: boolean },
+  ) => {
     if (!dev && !isServer) {
       config.resolve.alias = {
         ...config.resolve.alias,
@@ -25,6 +28,8 @@ const nextConfig: NextConfig = {
     }
     return config;
   },
+  // Empty turbopack config to silence the warning
+  turbopack: {},
 };
 
 export default nextConfig;
