@@ -1,6 +1,5 @@
 import {
   AboutSection,
-  BlogSection,
   CertificationsSection,
   ContactSection,
   EducationSection,
@@ -9,7 +8,7 @@ import {
   ProjectsSection,
   ServicesSection,
   SkillsSection,
-  TestimonialsSection,
+  TestimonialsSection
 } from "@/components/sections";
 
 const PortfolioContent = async () => {
@@ -25,7 +24,7 @@ const PortfolioContent = async () => {
       <ProjectsSection />
       <CertificationsSection />
       {/* <AchievementsSection /> */}
-      <BlogSection />
+      {/* <BlogSection /> */}
       <ContactSection />
     </>
   );
