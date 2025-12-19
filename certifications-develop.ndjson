@@ -1,0 +1,157 @@
+[
+  {
+    "_createdAt": "2025-10-31T13:53:54Z",
+    "_id": "cert-1",
+    "_rev": "yGZZ3T727k3k0KEgkhAo4f",
+    "_system": {
+      "base": {
+        "id": "cert-1",
+        "rev": "EmIWju6jq5EjEIE7dTlxxB"
+      }
+    },
+    "_type": "certification",
+    "_updatedAt": "2025-12-19T14:29:51Z",
+    "credentialId": "0f8664a1-aac1-48e4-8f8e-ed5a3b444c91",
+    "description": "Advanced AWS certification demonstrating expertise in designing distributed systems and applications on AWS platform.",
+    "issueDate": "2024-12-13",
+    "issuer": "MinTic",
+    "logo": {
+      "_type": "image",
+      "asset": {
+        "_ref": "image-84bbb99a310cd98c4ff22e0b741295b486d27b1e-601x601-png",
+        "_type": "reference"
+      }
+    },
+    "name": "Cloud Architecture Bootcamp",
+    "order": 1,
+    "skills": [
+      {
+        "_key": "UFWuUxaC",
+        "_ref": "skill-aws",
+        "_type": "reference"
+      },
+      {
+        "_key": "vImCU7uS",
+        "_ref": "skill-docker",
+        "_type": "reference"
+      },
+      {
+        "_key": "yCk66raO",
+        "_ref": "skill-kubernetes",
+        "_type": "reference"
+      }
+    ]
+  },
+  {
+    "_createdAt": "2025-10-31T13:53:54Z",
+    "_id": "cert-2",
+    "_rev": "p4mKPo6HUwILpHgn4OlVP0",
+    "_system": {
+      "base": {
+        "id": "cert-2",
+        "rev": "KEdY6Duo5f1tl9ZSUkGuRr"
+      }
+    },
+    "_type": "certification",
+    "_updatedAt": "2025-12-19T14:32:04Z",
+    "credentialId": "99ee0fe2-5a25-4ee9-af69-b94760f31ea6",
+    "credentialUrl": "https://www.credly.com/badges/99ee0fe2-5a25-4ee9-af69-b94760f31ea6/public_url",
+    "description": "Professional certification for designing, developing, and managing robust, secure, scalable cloud architecture on Google Cloud.",
+    "issueDate": "2025-05-22",
+    "issuer": "Cisco",
+    "logo": {
+      "_type": "image",
+      "asset": {
+        "_ref": "image-a198003832dd644dadf092b02c26200f6f0f646a-600x600-png",
+        "_type": "reference"
+      }
+    },
+    "name": "Python Essentials 1",
+    "order": 2,
+    "skills": [
+      {
+        "_key": "qXIC0rHE",
+        "_ref": "skill-gcp",
+        "_type": "reference"
+      },
+      {
+        "_key": "JnnZ0Cj0",
+        "_ref": "skill-kubernetes",
+        "_type": "reference"
+      },
+      {
+        "_key": "gLvlU4yt",
+        "_ref": "skill-terraform",
+        "_type": "reference"
+      }
+    ]
+  },
+  {
+    "_createdAt": "2025-10-31T13:53:54Z",
+    "_id": "cert-3",
+    "_rev": "yGZZ3T727k3k0KEgkhDuv9",
+    "_system": {
+      "base": {
+        "id": "cert-3",
+        "rev": "KEdY6Duo5f1tl9ZSUkGuRr"
+      }
+    },
+    "_type": "certification",
+    "_updatedAt": "2025-12-19T14:57:47Z",
+    "credentialId": "9cbaf1f3-c50b-40e6-a2e4-6e743ab0e32a",
+    "credentialUrl": "https://www.credly.com/badges/9cbaf1f3-c50b-40e6-a2e4-6e743ab0e32a/public_url",
+    "description": "Certification demonstrating proficiency in Python Programming",
+    "issueDate": "2025-05-30",
+    "issuer": "Cisco",
+    "logo": {
+      "_type": "image",
+      "asset": {
+        "_ref": "image-326022b28916ef832377774c93b163d0c35239d8-2048x2048-png",
+        "_type": "reference"
+      }
+    },
+    "name": "Python Essentials 2",
+    "order": 3,
+    "skills": [
+      {
+        "_key": "WCSjNFQe",
+        "_ref": "skill-python",
+        "_type": "reference"
+      }
+    ]
+  },
+  {
+    "_createdAt": "2025-12-16T16:15:01Z",
+    "_id": "cert-4",
+    "_rev": "EmIWju6jq5EjEIE7dU1NRn",
+    "_system": {
+      "base": {
+        "id": "cert-4",
+        "rev": "KEdY6Duo5f1tl9ZSUkGuRr"
+      }
+    },
+    "_type": "certification",
+    "_updatedAt": "2025-12-19T15:00:58Z",
+    "credentialId": "c2fd10e9-2ebb-479b-83d2-e789bc76d834",
+    "credentialUrl": "https://www.credly.com/badges/c2fd10e9-2ebb-479b-83d2-e789bc76d834/public_url",
+    "description": "Comprehensive certification covering Data Engineering concepts.",
+    "issueDate": "2024-11-26",
+    "issuer": "Coursera",
+    "logo": {
+      "_type": "image",
+      "asset": {
+        "_ref": "image-63601362360d0c8b38b834400069a4dba33b1b6c-1080x1080-png",
+        "_type": "reference"
+      }
+    },
+    "name": "Data Engineering Essentials",
+    "order": 4,
+    "skills": [
+      {
+        "_key": "b20ecb711238",
+        "_ref": "skill-python",
+        "_type": "reference"
+      }
+    ]
+  }
+]
